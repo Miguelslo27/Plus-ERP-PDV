@@ -1,0 +1,39 @@
+<header>
+	<div class="menu-commands">
+		<a href="#" data-action="openMenu" class="fa fa-bars"></a>
+	</div>
+	<div class="tasks-bar-commands"></div>
+	<div class="user-commands">
+		<!-- <a href="#" data-action="search" class="fa fa-search"></a> -->
+		<a href="/changelog.html" target="_blank" class="chagnelog-link">Historial de Cambios</a>
+		<a href="#" data-action="logout" class="fa fa-power-off"></a>
+	</div>
+</header>
+<section id="nav-menu" class="out-left-card">
+	<ul class="store">
+		<li class="nav-link">
+			<a href="#" data-action="openMenuSection" data-params="">
+				<span class="fa fa-history"></span>
+				<span class="label">Historial de Transacciones</span>
+			</a>
+		</li>
+		<li class="nav-link">
+			<a href="#" data-action="openMenuSection" data-params='{"section": "list", "template": "clients", "model": "clients", "page": "1", "dataFn": "getClientsData"}'>
+				<span class="fa fa-users"></span>
+				<span class="label">Clientes</span>
+			</a>
+		</li>
+		<li class="nav-link">
+			<a href="#" data-action="openMenuSection" data-params='{"section": "list", "template": "articles", "model": "products", "page": "1", "dataFn": "getProductsData"}'>
+				<span class="fa fa-file-text"></span>
+				<span class="label">Artículos</span>
+			</a>
+		</li>
+	</ul>
+	<div id="menu-section">
+		<a href="#" data-action="openMenu" class="close-menu-section fa fa-close"></a>
+		<div class="menu-section-content"></div>
+	</div>
+</section>
+<section id="open-app">
+</section>

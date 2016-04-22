@@ -1,0 +1,16 @@
+<a href="#" data-action="closeCard" data-params='{"card-name": "end-ticket"}' class="invisible-link"></a>
+<div class="context-content">
+	<h2>Transacción finalizada con éxito</h2>
+	<hr>
+	<div class="summary">
+		<div class="ticket-total">Pagado: <span class="value">$ {{total}}</span></div>
+		<div class="ticket-payment-method">Medio de pago: <span class="value">{{pay_type_human_readable}}</span></div>
+		<div class="ticket-amount">Abonado: <span class="value">$ {{pay_amount}}</div>
+		{{if: pay_type == 'cash'}}
+		<div class="ticket-change">Cambio: <span class="value">$ {{pay_change}}</div>
+		{{endif}}
+	</div>
+</div>
+<div class="context-commands">
+	<a href="#" data-action="cancelTicket" class="complete-pay width-100 fa fa-2x fa-check"></a>
+</div>

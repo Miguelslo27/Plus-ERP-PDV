@@ -1,0 +1,54 @@
+<h1 class="title">
+	<span class="section-icon fa fa-file-text"></span>
+	Editar Cliente
+</h1>
+
+<div class="form" id="client-form">
+	<input class="form-input" type="hidden" id="id" name="id" value="{{client_id}}">
+	<div class="line-form">
+		<label for="first_name">Nombre</label>
+		<input class="form-input" type="text" id="first_name" name="first_name" value="{{if: client_first_name != ''}}{{client_first_name}}{{endif}}">
+	</div>
+	<div class="line-form">
+		<label for="last_name">Apellido</label>
+		<input class="form-input" type="text" id="last_name" name="last_name"  value="{{if: client_last_name != ''}}{{client_last_name}}{{endif}}">
+	</div>
+	<div class="line-form">
+		<label for="document">Documento</label>
+		<input class="form-input" type="text" id="document" name="document"  value="{{if: client_document != ''}}{{client_document}}{{endif}}">
+	</div>
+	<div class="line-form">
+		<label for="address">Dirección</label>
+		<input class="form-input" type="text" id="address" name="address"  value="{{if: client_address != ''}}{{client_address}}{{endif}}">
+	</div>
+	<div class="line-form">
+		<label for="phone">Teléfono</label>
+		<input class="form-input" type="text" id="phone" name="phone"  value="{{if: client_phone != ''}}{{client_phone}}{{endif}}">
+	</div>
+	<div class="line-form">
+		<label for="email">Email</label>
+		<input class="form-input" type="text" id="email" name="email"  value="{{if: client_email != ''}}{{client_email}}{{endif}}">
+	</div>
+	<h3>Empresa</h3>
+	<div class="line-form">
+		<label for="company_name">Nombre</label>
+		<input class="form-input" type="text" id="company_name" name="company_name"  value="{{if: client_company_name != ''}}{{client_company_name}}{{endif}}">
+	</div>
+	<div class="line-form">
+		<label for="company_rut">RUT</label>
+		<input class="form-input" type="text" id="company_rut" name="company_rut"  value="{{if: client_company_rut != ''}}{{client_company_rut}}{{endif}}">
+	</div>
+	<div class="line-form">
+		<label for="company_address">Dirección</label>
+		<input class="form-input" type="text" id="company_address" name="company_address"  value="{{if: client_company_address != ''}}{{client_company_address}}{{endif}}">
+	</div>
+	<div class="line-form">
+		<label for="company_email">Email</label>
+		<input class="form-input" type="text" id="company_email" name="company_email"  value="{{if: client_company_email != ''}}{{client_company_address}}{{endif}}">
+	</div>
+</div>
+<div class="form-buttons">
+	<a href="#" class="btn btn-save" data-action="saveClient" data-params='{"form": "client-form"}'>Guardar</a>
+	<a href="#" class="btn btn-reset" data-action="resetForm">Cancelar</a>
+	<a href="#" class="btn btn-close" data-action="openMenuSection" data-params='{"section": "list", "template": "clients", "model": "clients", "page": "1", "dataFn": "getClientsData"}'>Salir</a>
+</div>

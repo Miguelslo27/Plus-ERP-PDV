@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+	<meta http-equiv="pragma" content="no-cache" />
+
+	<title>ERP - Changelog</title>
+
+	<style>
+	@font-face {
+		font-family: 'Abel';
+		font-style: normal;
+		font-weight: 400;
+		src: local('Abel'), local('Abel-Regular'), url('/statics/fonts/Abel-Regular.ttf') format('woff2');
+	}
+	* {
+		font-family: Abel;
+		font-weight: normal;
+	}
+	dl {
+
+	}
+	dt {
+		
+	}
+	dd {
+		margin-bottom: 15px;
+	}
+	strong {
+		font-weight: bold;
+	}
+	body {
+		margin: auto;
+    	width: 1000px;
+    	padding-top: 110px;
+	}
+	h1 {
+		background: #222 none repeat scroll 0 0;
+	    color: #fff;
+	    height: 100px;
+	    left: 0;
+	    line-height: 100px;
+	    margin: 0;
+	    position: absolute;
+	    right: 0;
+	    text-align: center;
+	    top: 0;
+	}
+	</style>
+</head>
+<body>
+	<h1>Changelog - Registro de cambios ERP</h1>
+
+	<h2>Registro de los cambios por versión en la plataforma ERP</h2>
+
+	<h2>¿En que estamos trabajando?</h2>
+	<hr>
+	<h2>Próxima versión: V alpha 0.7.1</h2>
+	<p>Los items marcados en <strong>negrita</strong> son los que tienen grandes probabilidades de estar presentes en la próxima actualización</p>
+	<ul>
+		<li>Bugs -
+			<ul>
+				<li><strong>Finalizar la transacción no está enviando el ticket a la impresora</strong></li>
+				<li><strong>Al ingresar un código de barras sin presionar Enter y realizar otra acción, como continuar, el código de barras queda por ensima obstruyendo la vista.</strong></li>
+				<li>El historial de transacciones no responde</li>
+				<li>El botón cancelar de los formularios para Artículo y Cliente no hace nada</li>
+				<li>La lista de clientes dice "No se encontraron --undefined--"</li>
+				<li>Cuando se selecciona un item del ticket mientras se está viendo el resumen de la transacción, hay un error inesperado en pantalla</li>
+				<li>En ocasiones se pierde el foco de la aplicación y no se pueden agregar items por código de barras, en esos casos hay que actualizar la aplicación</li>
+				<li>En el ticket siempre se deben ver los items de abajo del todo</li>
+				<li>El scroll en el ticket debe ser sólo para los items y no para los rótulos</li>
+			</ul>
+		</li>
+		<li>Mejoras -
+			<ul>
+				<li><strong>Agregar un botón para actualizar el estado de la aplicación<br>Con esta alternativa podemos sobresalir de un error del sistema</strong></li>
+				<li>Cuando es pago en efectivo y pide el monto con el que se va a pagar, se debería poder completar la acción con un Enter</li>
+				<li>Preguntar si está seguro antes de quitar un item del ticket</li>
+				<li>Preguntar si está seguro antes de cancelar el ticket</li>
+				<li>Preguntar si está seguro antes de eliminar un artículo</li>
+				<li>Preguntar si está seguro antes de eliminar un cliente</li>
+				<li>Incluir un mensaje para Próximo Cliente y uno para Gracias por su compra</li>
+				<li>En modo de pago, agregar sugest as you type para buscar y seleccionar cliente</li>
+				<li>Mejorar el aspecto visual cuando se muestra un cliente seleccionado</li>
+				<li>Manejar más de un ticket a la vez utilizando la barra superior, agregando un + para crear una nueva instancia de ticket</li>
+			</ul>
+		</li>
+		<li>Interfaz -
+			<ul>
+				<li>Poner C.I. en lugar de CI en el buscador de usuarios cuando se está pagando</li>
+				<li>Cambiar el Spin de loading ya que se ve mal en Chrome</li>
+				<li>Mejorar el loading en los bloques pequeños, se ve mal</li>
+				<li>Mostrar el código de barras en la lista de artículos</li>
+				<li>Agregar un botón + para agregar el arículo al ticket</li>
+				<li>Cambiar el color de los rótulos en las listas, poner fondo rojo fuente blanca (igual que el paginador)</li>
+				<li>Mejorar los mensajes emergentes de la aplicación</li>
+			</ul>
+		</li>
+	</ul>
+
+	<h2>También estamos trabajando en mejoras más grandes para próximas versiones</h2>
+	<hr>
+	<dl>
+		<dt>Manejo de toda la aplicación desde el caché</dt>
+		<dd>Esta mejora supondrá un gran cambio en la velocidad con la que se procesa las acciones en la aplicación, haciendo todo el flujo de trabajo mucho más fluido</dd>
+
+		<dt>Sincronización automática con el servidor en segundo plano</dt>
+		<dd>Esta mejora permitirá manejar la sincronización de forma totalmente silenciosa, de manera que nunca se verá afectada la fluidez de la aplicaicón</dd>
+
+		<dt>Detección de conexión a Internet</dt>
+		<dd>Combinada con las mejoras anteriores, esta permitirá a la aplicación seguir funcionando a pesar de no estar conectado a la red, realizando la sincronización en segundo plano una vez que la conexión sea reestablecida</dd>
+	</dl>
+
+	<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+	<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+
+	<h2>Ultima versión - va0.7.0.1/210416</h2>
+	
+	<h2>V alpha 0.7.0.1 - 21/04/2016</h2>
+	<hr>
+	<ul>
+		<li>Bug - Se resolvió un error que hacía que la aplicación se trancara al ingresar códigos de barras en Chrome</li>
+	</ul>
+
+	<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+	<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+
+	<h2>V alpha 0.7 - 21/04/2016</h2>
+	<hr>
+	<ul>
+		<li>Bug - Se quitó el signo de menos que se veía en Impuestos al ir a Pagar transacción</li>
+		<li>Bug - Se resolvió un error que sucedía al seleccionar un método de pago, ir atrás y seleccionar otro (o incluso el mismo), se guardaban multiples transacciones cada vez que se seguían esos pasos</li>
+		<li>Bug - Se resolvió el error que sucedía al presionar en Cancelar ticket estando este vacío igualmente lanzaba el proceso</li>
+		<li>Mejora - Los botones de la transacción (Cancelar último, Cancelar Ticket y Continuar) no aparecen si no hay items en el ticket</li>
+	</ul>
+
+	<h2>Versiones pasadas -</h2>
+	
+	<h2>V alpha 0.6.1 - 20/04/2016</h2>
+	<hr>
+	<ul>
+		<li>Bug - Se resolvió un error con el cual no se podía finalizar el pago con tarjeta</li>
+		<li>Bug - Se resolvió un error que impedía pagar en efectivo la factura</li>
+		<li>Bug - Se resolvió un error por el cual Finalizar la transacción no estaba funcionando</li>
+	</ul>
+	<h2>V alpha 0.6 - 20/04/2016</h2>
+	<hr>
+	<ul>
+		<li>Bug - Se arregló un error por el que no se guardaban los productos de un ticket, tanto en guardar como en cualquier forma de pago</li>
+		<li>Mejora - Se agregó la asignación de cliente que no se había implementado</li>
+	</ul>
+	
+	<h2>V alpha 0.5 - 20/04/2016</h2>
+	<hr>
+	<ul>
+		<li>Bug - Se arregló un error que sucedía cuando no se agregaron items al ticket, al presionar en Continuar.<br>La pantalla siguiente quedaba cargando por tiempo indeterminado.</li>
+		<li>Bug - Se arregló un error que impedía guardar la transacción</li>
+		<li>Bug - Se arregló un error que impedía seleccionar pago con tarjeta</li>
+		<li>Bug - Se resolvió un error con las fechas que no se guardaban correctamente en la base de datos</li>
+		<li>Interfaz - Se redujo el tamaño de los íconos en los botones</li>
+	</ul>
+
+	<h2>V alpha 0.4 - 19/04/2016</h2>
+	<hr>
+	<ul>
+		<li>Bug - Se eliminó una sombra que sobresalía sobre la derecha de la pantalla</li>
+		<li>Bug - Se reparó parte del flujo de compra
+			<ul>
+				<li>Continuar con la compra envía al resumen y modos de pago</li>
+				<!-- <li>Los medios de pago ahora funcionan correctamente</li> -->
+				<!-- <li>El botón de Guardar transacción funciona correctamente</li> -->
+				<!-- <li>El botón de finalizar transacción funciona correctamente</li> -->
+			</ul>
+		</li>
+	</ul>
+
+	<h2>V alpha 0.3 - 19/04/2016</h2>
+	<hr>
+	<ul>
+		<li>Se agregó la página de historial de cambios y el link a la misma para facilitar el acceso</li>
+		<li>Se arregló un error que impedía cerrar la ventana del item una vez que este era seleccionado del ticket</li>
+		<li>Se agregó la funcionalidad de eliminar el item cuando se lo selecciona desde el ticket</li>
+		<li>Se arregló el botón de Check que no funcionaba, cierra la edición del item cuando se selecciona desde el ticket</li>
+	</ul>
+
+	<h2>V alpha 0.2 - 19/04/2016</h2>
+	<hr>
+	<ul>
+		<li>Se arregló un error en el que aparecía una scrollbar horizontal en la pantalla</li>
+		<li>Se arregló un error en el que al eliminar el último item agregado al ticket, no se actualizaba el resumen del mismo</li>
+		<li>Se arregló un error en el que al eliminar el último item agregado al ticket, no se podían agregar nuevos productos
+  			por código de barras a no ser haciendo click en la pantalla (Se perdía el foco del barcode input)</li>
+  		<li>Idem anterior, pasaba lo mismo al cancelar el ticket en cuestión</li>
+	</ul>
+</body>
+</html>

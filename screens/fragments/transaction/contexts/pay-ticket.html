@@ -1,0 +1,32 @@
+<a href="#" data-action="closeCard" data-params='{"card-name": "pay-ticket"}' class="invisible-link"></a>
+<div class="context-content">
+	<h2>Pagar transacción</h2>
+	<h3>Resumen de la transacción:</h3>
+	<hr>
+	<div class="summary">
+		<div class="general-summary">
+			<div class="general-value ticket-subtotal">
+				<span class="label">Subtotal</span>
+				<span class="value">$ {{subtotal}}</span>
+			</div>
+			<div class="general-value ticket-discount">
+				<span class="label">Descuento</span>
+				<span class="value">$ -{{discount}}</span>
+			</div>
+			<div class="general-value ticket-taxes">
+				<span class="label">Impuestos</span>
+				<span class="value">$ {{taxes}}</span>
+			</div>
+		</div>
+		<div class="ticket-total">
+			<span class="label">Total a pagar</span>
+			<span class="value">$ {{total}}</span>
+		</div>
+	</div>
+</div>
+<div class="context-commands">
+	<a href="#" data-action="closeCard" data-params='{"card-name": "pay-ticket"}' class="back-to-ticket width-25 fa fa-3x fa-angle-left"></a>
+	<a href="#" data-action="saveTicket" data-params='{"close-ticket": true}' class="save-ticket width-25 fa fa-2x fa-save"></a>
+	<a href="#" data-action="payWithCreditCard" class="pay-credit width-25 fa fa-2x fa-credit-card"></a>
+	<a href="#" data-action="payWithCash" class="pay-cash width-25 fa fa-2x fa-money"></a>
+</div>

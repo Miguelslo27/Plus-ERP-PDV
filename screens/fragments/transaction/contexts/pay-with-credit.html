@@ -1,0 +1,21 @@
+<a href="#" data-action="closeCard" data-params='{"card-name": "pay-with-credit"}' class="invisible-link"></a>
+<div class="context-content">
+	<h2>Pago con tarjeta (Crédito/Débito)</h2>
+	<hr>
+	<div class="summary">
+		<div class="ticket-total">Total a pagar: <span class="value">$ {{total}}</span></div>
+		<div class="ticket-amount">Abona: $ <span class="value">{{total}}</span></div>
+	</div>
+	<div class="pay-actions">
+		<div class="client-add-form">
+			<input type="text" class="user-document-input" placeholder="Cliente: CI sin puntos ni guiones">
+			<a href="#" data-action="addClientToTicket" data-params='{"ticketId": "{{id}}"}' class="in-card-action fa fa-2x fa-check"></a>
+		</div>
+		<div class="client-name">
+		</div>
+	</div>
+</div>
+<div class="context-commands">
+	<a href="#" data-action="closeCard" data-params='{"card-name": "pay-with-credit"}' class="back-to-ticket width-50 fa fa-3x fa-angle-left"></a>
+	<a href="#" data-action="completePay" data-params='{"ticketId": "{{id}}", "pay-with": "credit_card"}' class="complete-pay width-50 fa fa-2x fa-check"></a>
+</div>

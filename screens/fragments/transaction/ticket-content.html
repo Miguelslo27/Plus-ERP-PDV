@@ -1,0 +1,42 @@
+<div class="ticket-content">
+	<ul class="product-list">
+		<li class="list-title">
+			<span class="description">Descripción</span>
+			<span class="qty">Cntd.</span>
+			<span class="unit-price">P/U</span>
+			<span class="product-subtotal">ST</span>
+		</li>
+
+		{{if: itemsInTicketLenght > 0}}
+			{{repeat: itemsInTicket}}
+			<li class="product">
+				<a href="#" data-action="showItemToEdit" data-params='[[rbr]]"id":"##id##"[[lbr]]'><span class="description">##name##</span></a>
+				<a href="#" data-action="showItemToEdit" data-params='[[rbr]]"id":"##id##"[[lbr]]'><span class="qty">1</span></a>
+				<a href="#" data-action="showItemToEdit" data-params='[[rbr]]"id":"##id##"[[lbr]]'><span class="unit-price">$ ##sell_price##</span></a>
+				<a href="#" data-action="showItemToEdit" data-params='[[rbr]]"id":"##id##"[[lbr]]'><span class="product-subtotal">$ ##sell_price##</span></a>
+			</li>
+			{{endrepeat}}
+		{{endif}}
+		{{if: itemsInTicketLenght == 0}}
+			<li>No hay productos en el ticket</li>
+		{{endif}}
+	</ul>
+</div>
+<div class="ticket-summary">
+	<div class="ticket-subtotal">
+		<span class="subtotal-label">Sub Total</span>
+		<span class="subtotal-value">$ {{ticketSubTotal}}</span>
+	</div>
+	<div class="ticket-discount">
+		<span class="discount-label">Descuento</span>
+		<span class="discount-value">$ -{{ticketDiscount}}</span>
+	</div>
+	<div class="ticket-taxes">
+		<span class="taxes-label">Impuestos</span>
+		<span class="taxes-value">$ {{ticketTaxes}}</span>
+	</div>
+	<div class="ticket-total">
+		<span class="total-label">Total</span>
+		<span class="total-value">$ {{ticketTotal}}</span>
+	</div>
+</div>

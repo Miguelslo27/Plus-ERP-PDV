@@ -1,0 +1,36 @@
+<h1 class="title">
+	<span class="section-icon fa fa-file-text"></span>
+	Nuevo Artículo
+</h1>
+
+<div class="form" id="product-form">
+	<div class="line-form">
+		<label for="internal_key">Código</label>
+		<input class="form-input" type="text" id="internal_key" name="internal_key">
+	</div>
+	<div class="line-form">
+		<label for="name">Nombre</label>
+		<input class="form-input" type="text" id="name" name="name">
+	</div>
+	<div class="line-form">
+		<label for="list_price">Precio de lista</label>
+		<input class="form-input" type="text" id="list_price" name="list_price">
+	</div>
+	<div class="line-form">
+		<label for="sell_price">Precio de venta</label>
+		<input class="form-input" type="text" id="sell_price" name="sell_price">
+	</div>
+	<div class="line-form">
+		<label for="stock">Cantidad</label>
+		<input class="form-input" type="text" id="stock" name="stock">
+	</div>
+	<div class="line-form">
+		<label for="bar_code">Código de barras</label>
+		<input class="form-input" type="text" id="bar_code" name="bar_code">
+	</div>
+</div>
+<div class="form-buttons">
+	<a href="#" class="btn btn-save" data-action="saveProduct" data-params='{"form": "product-form"}'>Guardar</a>
+	<a href="#" class="btn btn-reset" data-action="resetForm">Cancelar</a>
+	<a href="#" class="btn btn-close" data-action="openMenuSection" data-params='{"section": "list", "template": "articles", "model": "products", "page": "1", "dataFn": "getProductsData"}'>Salir</a>
+</div>

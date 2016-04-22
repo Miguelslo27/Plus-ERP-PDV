@@ -1,0 +1,894 @@
+@font-face {
+	font-family: 'Abel';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Abel'), local('Abel-Regular'), url('/statics/fonts/Abel-Regular.ttf') format('woff2');
+}
+.fa-spin {
+    animation: 0.5s linear 0s normal none infinite running fa-spin;
+}
+.hidden {
+    display: none;
+}
+* {
+    font-family: Abel;
+    font-weight: normal;
+    outline: none;
+}
+strong {
+    font-weight: bold;
+}
+html, body {
+    overflow: hidden;
+}
+body {
+	margin: 0;
+	padding: 0;
+}
+a {
+    outline: none;
+    text-decoration: none;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#all-wrap {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.loading {
+	background: rgba(255, 255, 255, 0.75);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 8;
+}
+.loading .loader {
+	background: rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    height: 100px;
+    left: 50%;
+    line-height: 100px;
+    margin: -50px auto auto -50px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100px;
+}
+.loading .loader .fa {
+	color: #fff;
+    font-size: 30px;
+    line-height: 100px;
+}
+
+/* Estilos del login form */
+.login-form {
+	height: 190px;
+	left: 50%;
+    margin: -95px auto auto -100px;
+    position: absolute;
+    top: 50%;
+    width: 200px;
+}
+.login-form h1 {
+	font-size: 28px;
+	margin: 0 0 15px;
+	text-align: center;
+}
+.login-form .login-inputs {
+	border: 1px solid #b20000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 80px;
+    margin-bottom: 15px;
+    padding: 0 10px;
+    width: 200px;
+}
+.login-form .login-inputs input {
+	border: none;
+	box-sizing: border-box;
+	font-size: 14px;
+	height: 39px;
+    outline: none;
+	width: 178px;
+}
+.login-form .login-inputs input:first-child {
+	border-bottom: 1px solid #b20000;
+}
+.login-form .login-inputs .fa {
+	background: #fff;
+	border-left: 1px solid #999;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+    color: #999;
+    font-size: 14px;
+    height: 29px;
+    line-height: 29px;
+    margin: 5px 0;
+    position: absolute;
+    right: 1px;
+    text-align: center;
+    width: 40px;
+}
+.login-form .login-send-button {}
+.login-form .login-send-button a {
+	background: #b20000;
+    border-radius: 10px;
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.login-form .login-send-button a:hover {
+	background: #c20000;
+}
+
+/* TODO - Estilos de punto de venta *generales* */
+header {
+    background: #333;
+    height: 60px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.menu-commands {
+    float: left;
+}
+.tasks-bar-commands {
+    float: left;
+}
+.user-commands {
+    float: right;
+}
+header a,
+header .fa {
+    color: #fff;
+    display: block;
+    float: left;
+    font-size: 22px;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px 0;
+    text-align: center;
+    width: 40px;
+}
+header a:hover,
+header .fa:hover {
+    color: #ddd;
+}
+header a.chagnelog-link {
+    padding: 0 20px;
+    width: auto;
+}
+.menu-commands .fa {
+    border-right: 1px solid #888;
+    padding: 0 10px;
+}
+.tasks-bar-commands a {
+    border-right: 1px solid #888;
+    padding: 0 25px;
+    width: initial;
+}
+.user-commands .fa {
+    border-left: 1px solid #888;
+    padding: 0 10px;
+}
+
+/* Menu */
+#nav-menu {
+    display: none;
+    background: #222;
+    bottom: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.85);
+    left: 0;
+    position: absolute;
+    top: 60px;
+    /*width: 30%;*/
+    width: 25%;
+    z-index: 8;
+}
+#nav-menu.visible {
+    display: block;
+}
+#nav-menu ul.store {
+    border-bottom: 1px solid #333;
+}
+#nav-menu ul.store li {}
+#nav-menu ul.store li.nav-link {}
+#nav-menu ul.store li.nav-link a {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    padding: 10px;
+}
+#nav-menu ul.store li.nav-link a:hover {
+    color: #ddd;
+}
+#nav-menu ul.store li.nav-link a .fa {
+    border-right: 1px solid #333;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 15px;
+    padding-right: 10px;
+    text-align: center;
+    width: 40px;
+}
+#nav-menu ul.store li.nav-link a .label {}
+#nav-menu #menu-section {
+    display: none;
+    background: #fff;
+    bottom: 0;
+    left: 100%;
+    position: absolute;
+    /*right: -233.33%;*/
+    right: -300%;
+    top: 0;
+}
+#nav-menu #menu-section a.close-menu-section {
+    color: #888;
+
+    background: #b20000;
+    color: #fff;
+
+    font-size: 28px;
+    height: 60px;
+    line-height: 60px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 60px;
+    z-index: 8;
+}
+#nav-menu #menu-section .menu-section-content {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#nav-menu #menu-section .menu-section-content h1 {}
+#nav-menu #menu-section .menu-section-content h1.title {
+    border-bottom: 1px solid #888;
+    font-size: 24px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0;
+    padding-right: 60px;
+}
+#nav-menu #menu-section .menu-section-content h1.title .section-icon {
+    background: #333;
+    color: #fff;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 15px;
+    text-align: center;
+    width: 60px;
+}
+#nav-menu #menu-section .menu-section-content h1.title .section-action {
+    background: #00b200 none repeat scroll 0 0;
+    color: #fff;
+    float: right;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    width: 60px;
+}
+#nav-menu #menu-section .menu-section-content .pager {
+    border-bottom: 1px solid #b20000;
+    height: 60px;
+    position: relative;
+}
+#nav-menu #menu-section .menu-section-content .pager a {
+    display: inline-block;
+    color: #b20000;
+    font-size: 22px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    width: 60px;
+}
+#nav-menu #menu-section .menu-section-content .pager a.pager-prev {
+    background: #ccc;
+    float: left;
+}
+#nav-menu #menu-section .menu-section-content .pager a.pager-next {
+    background: #ccc;
+    float: right;
+}
+#nav-menu #menu-section .menu-section-content .pager a.selected {
+    background: #b22222;
+    color: #fff;
+}
+#nav-menu #menu-section .menu-section-content .pager a:hover {
+    background: #b20000;
+    color: #fff;
+}
+#nav-menu #menu-section .menu-section-content .pager .pages {
+    left: 60px;
+    margin: auto;
+    position: absolute;
+    right: 60px;
+    text-align: center;
+    top: 0;
+}
+#nav-menu #menu-section .menu-section-content .table {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 122px;
+}
+#nav-menu #menu-section .menu-section-content .table .table-header {
+    overflow: hidden;
+    background: #ccc;
+    border-bottom: 1px solid #888;
+}
+#nav-menu #menu-section .menu-section-content .table .table-header .header {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    color: #b20000;
+    font-size: 20px;
+}
+#nav-menu #menu-section .menu-section-content .table .table-body {
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 41px;
+}
+#nav-menu #menu-section .menu-section-content .table .table-body .table-row {
+    overflow: hidden;
+    position: relative;
+}
+#nav-menu #menu-section .menu-section-content .table .table-body .table-row:last-child {
+    border-bottom: 1px solid #888;
+}
+#nav-menu #menu-section .menu-section-content .table .table-body .table-row .cell {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    padding: 10px 15px;
+}
+#nav-menu #menu-section .menu-section-content .table .code {
+    text-align: center;
+    width: 100px;
+}
+#nav-menu #menu-section .menu-section-content .table .description {
+    width: 38%;
+}
+#nav-menu #menu-section .menu-section-content .table .price {
+    width: 110px;
+    text-align: center;
+}
+#nav-menu #menu-section .menu-section-content .table .stock {
+    width: 80px;
+    text-align: center;
+}
+#nav-menu #menu-section .menu-section-content .table .item-action {
+    background: #ccc;
+    bottom: 0;
+    float: right !important;
+    padding: 0 !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+#nav-menu #menu-section .menu-section-content .table .item-action a {
+    display: block;
+    float: left;
+    text-align: center;
+    width: 30px;
+    font-size: 22px;
+    padding: 10px 15px;
+}
+#nav-menu #menu-section .menu-section-content .table .item-action a.edit {
+    color: #3535b2;
+}
+#nav-menu #menu-section .menu-section-content .table .item-action a.remove {
+    color: #b20000;
+}
+#nav-menu #menu-section .menu-section-content .form {
+    bottom: 60px;
+    left: 0;
+    overflow: auto;
+    padding: 60px;
+    position: absolute;
+    right: 0;
+    top: 61px;
+}
+#nav-menu #menu-section .menu-section-content .form .line-form {
+    margin-bottom: 15px;
+}
+#nav-menu #menu-section .menu-section-content .form .line-form label {
+    display: inline-block;
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+    width: 20%;
+}
+#nav-menu #menu-section .menu-section-content .form .line-form input {
+    border: 1px solid #666;
+    height: 40px;
+    width: 79%;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+#nav-menu #menu-section .menu-section-content .form-buttons {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+#nav-menu #menu-section .menu-section-content .form-buttons .btn {
+    color: #fff;
+    display: block;
+    float: left;
+    font-size: 22px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    width: 33.33%;
+}
+#nav-menu #menu-section .menu-section-content .form-buttons .btn:hover {}
+#nav-menu #menu-section .menu-section-content .form-buttons .btn.btn-save {
+    background: #00b200;
+}
+#nav-menu #menu-section .menu-section-content .form-buttons .btn.btn-save:hover {
+    background: #18b218;
+}
+#nav-menu #menu-section .menu-section-content .form-buttons .btn.btn-reset {
+    background: #b8b8b8;
+}
+#nav-menu #menu-section .menu-section-content .form-buttons .btn.btn-reset:hover {}
+#nav-menu #menu-section .menu-section-content .form-buttons .btn.btn-close {
+    background: #b21818;
+}
+#nav-menu #menu-section .menu-section-content .form-buttons .btn.btn-close:hover {}
+#open-app {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 60px;
+}
+
+/* Ticket */
+.ticket {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    /*width: 30%;*/
+    width: 25%;
+}
+.ticket-content {
+    bottom: 200px;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.ticket .product-list {}
+.ticket .product-list li {
+    padding: 12px 5px 12px 15px;
+    position: relative;
+    overflow: hidden;
+}
+.ticket .product-list li span {
+    display: block;
+    float: left;
+}
+.ticket .product-list .list-title {
+    background: #ddd;
+}
+.ticket .product-list .list-title span {
+    font-weight: bold;
+}
+.ticket .product-list .product {}
+.ticket .product-list .description {
+    width: 50%;
+}
+.ticket .product-list .qty {
+    text-align: center;
+    width: 14%;
+}
+.ticket .product-list .unit-price {
+    text-align: center;
+    width: 18%;
+}
+.ticket .product-list .product-subtotal {
+    text-align: center;
+    width: 18%;
+}
+.ticket-summary {
+    background: #ddd;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 200px;
+    left: 0;
+    padding: 20px;
+    position: absolute;
+    right: 0;
+}
+.ticket-summary .ticket-subtotal {
+    overflow: hidden;
+}
+.ticket-summary .ticket-subtotal .subtotal-label {
+    display: block;
+    float: left;
+    font-size: 22px;
+}
+.ticket-summary .ticket-subtotal .subtotal-value {
+    display: block;
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+}
+.ticket-summary .ticket-discount {
+    overflow: hidden;
+    color: #b20000;
+}
+.ticket-summary .ticket-discount .discount-label {
+    display: block;
+    float: left;
+    font-size: 22px;
+}
+.ticket-summary .ticket-discount .discount-value {
+    display: block;
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+}
+.ticket-summary .ticket-taxes {
+    overflow: hidden;
+}
+.ticket-summary .ticket-taxes .taxes-label {
+    display: block;
+    float: left;
+    font-size: 22px;
+}
+.ticket-summary .ticket-taxes .taxes-value {
+    display: block;
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+}
+.ticket-summary .ticket-total {
+    text-align: center;
+}
+.ticket-summary .ticket-total .total-label {
+    display: block;
+    font-size: 26px;
+}
+.ticket-summary .ticket-total .total-value {
+    color: #00b200;
+    display: block;
+    font-size: 30px;
+}
+
+/* Ticket Context */
+.ticket-context {
+    background: #222;
+    bottom: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.85);
+    /*left: 30%;*/
+    left: 25%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.ticket-context .context-card {
+    background: #222;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.ticket-context .context-card a.invisible-link {
+    bottom: 0;
+    display: block;
+    left: -2%;
+    position: absolute;
+    top: 0;
+    width: 2%;
+}
+.ticket-context .context-card.out-right-card {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.85);
+    left: 101%;
+    right: -100%;
+
+    transition: all .25s ease;
+}
+.ticket-context .context-card.out-right-card.visible {
+    left: 2%;
+    right: 0;
+
+    transition: all .25s ease;
+}
+.ticket-context .context-card .context-content {
+    padding: 20px;
+    background: #222;
+}
+.ticket-context .context-card .context-content h2 {
+    margin: 0;
+    color: #fff;
+}
+.ticket-context .context-card .context-content h3 {
+    color: #fff;
+}
+.ticket-context .context-card .context-commands {
+    bottom: 0;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    
+}
+.ticket-context .context-card.current-ticket .context-commands {
+    bottom: -100px;
+    transition: all .25s ease;
+}
+.ticket-context .context-card.current-ticket .context-commands.vislbe {
+    bottom: 0;
+    transition: all .25s ease;
+}
+.ticket-context .context-card .context-commands a {
+    background: #00b200;
+    color: #fff;
+    display: block;
+    float: left;
+    width: 33.333%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+.ticket-context .context-card .context-commands a.width-25 {
+    width: 25%;
+}
+.ticket-context .context-card .context-commands a.width-50 {
+    width: 50%;
+}
+.ticket-context .context-card .context-commands a.width-100 {
+    width: 100%;
+}
+.ticket-context .context-card .context-commands a.back-last-action {}
+.ticket-context .context-card .context-commands a.delete-item,
+.ticket-context .context-card .context-commands a.delete-ticket {
+    background: #b20000;
+}
+.ticket-context .context-card .context-commands a.pay-ticket {}
+.ticket-context .context-card.pay-ticket .context-commands a {
+    border-right: 1px solid #008800;
+    box-sizing: border-box;
+}
+.ticket-context .context-card.pay-ticket {}
+.ticket-context .context-card.pay-ticket .summary {
+    overflow: hidden;
+}
+.ticket-context .context-card.pay-ticket .general-summary {
+    padding: 20px;
+    /*float: left;*/
+    /*width: 50%;*/
+    box-sizing: border-box;
+}
+.ticket-context .context-card.pay-ticket .general-value {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.ticket-context .context-card.pay-ticket .general-value .label {
+    display: block;
+    float: left;
+    width: 50%;
+    padding-left: 30%;
+    box-sizing: border-box;
+}
+.ticket-context .context-card.pay-ticket .general-value .value {
+    display: block;
+    float: right;
+    width: 50%;
+    padding-right: 30%;
+    box-sizing: border-box;
+    text-align: right;
+}
+.ticket-context .context-card.pay-ticket .general-value.ticket-subtotal {}
+.ticket-context .context-card.pay-ticket .general-value.ticket-subtotal .label {}
+.ticket-context .context-card.pay-ticket .general-value.ticket-subtotal .value {}
+.ticket-context .context-card.pay-ticket .general-value.ticket-discount {
+    color: #ff0000;
+}
+.ticket-context .context-card.pay-ticket .general-value.ticket-discount .label {}
+.ticket-context .context-card.pay-ticket .general-value.ticket-discount .value {}
+.ticket-context .context-card.pay-ticket .general-value.ticket-taxes {}
+.ticket-context .context-card.pay-ticket .general-value.ticket-taxes .label {}
+.ticket-context .context-card.pay-ticket .general-value.ticket-taxes .value {}
+.ticket-context .context-card.pay-ticket .ticket-total {
+    padding: 25px;
+    /*float: right;*/
+    /*width: 50%;*/
+    box-sizing: border-box;
+}
+.ticket-context .context-card.pay-ticket .ticket-total .label {
+    color: #fff;
+    display: block;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.ticket-context .context-card.pay-ticket .ticket-total .value {
+    color: #fff;
+    display: block;
+    font-size: 42px;
+    text-align: center;
+}
+.ticket-context .context-card.pay-with-cash,
+.ticket-context .context-card.pay-with-credit {}
+.ticket-context .context-card.pay-with-cash .summary,
+.ticket-context .context-card.pay-with-credit .summary {
+    overflow: hidden;
+    padding-top: 50px;
+}
+.ticket-context .context-card.pay-with-cash .ticket-total,
+.ticket-context .context-card.pay-with-credit .ticket-total,
+.ticket-context .context-card.pay-with-cash .ticket-amount,
+.ticket-context .context-card.pay-with-credit .ticket-amount {
+    box-sizing: border-box;
+    color: #fff;
+    float: left;
+    font-size: 30px;
+    padding: 50px;
+    width: 50%;
+}
+.ticket-context .context-card.pay-with-cash .ticket-total,
+.ticket-context .context-card.pay-with-credit .ticket-total {
+    text-align: right;
+    border-right: 1px solid #ddd;
+}
+.ticket-context .context-card.pay-with-cash .ticket-total .value,
+.ticket-context .context-card.pay-with-credit .ticket-total .value {}
+.ticket-context .context-card.pay-with-cash .ticket-amount,
+.ticket-context .context-card.pay-with-credit .ticket-amount {
+    text-align: left;
+}
+.ticket-context .context-card.pay-with-cash .ticket-amount .value .amount-cash {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-size: 30px;
+    width: 150px;
+    color: #fff;
+    text-align: right;
+}
+.ticket-context .context-card.pay-with-cash .ticket-amount .value,
+.ticket-context .context-card.pay-with-credit .ticket-amount .value {}
+.ticket-context .context-card.pay-with-cash .pay-actions,
+.ticket-context .context-card.pay-with-credit .pay-actions {}
+.ticket-context .context-card.pay-with-cash .pay-actions .client-add-form,
+.ticket-context .context-card.pay-with-credit .pay-actions .client-add-form {
+    background: #00b200;
+    margin: 50px auto 20px;
+    overflow: hidden;
+    width: 50%;
+}
+.ticket-context .context-card.pay-with-cash .pay-actions .client-name,
+.ticket-context .context-card.pay-with-credit .pay-actions .client-name {
+    width: 50%;
+    text-align: center;
+    margin: auto ;
+    font-size: 22px;
+    color: #fff;
+}
+.ticket-context .context-card.pay-with-cash .pay-actions .client-name-value,
+.ticket-context .context-card.pay-with-credit .pay-actions .client-name-value {
+    margin-right: 15px;
+}
+.ticket-context .context-card.pay-with-cash .pay-actions .client-name a,
+.ticket-context .context-card.pay-with-credit .pay-actions .client-name a {
+    width: 50px;
+    text-align: center;
+}
+.ticket-context .context-card.pay-with-cash .pay-actions .client-name a.fa,
+.ticket-context .context-card.pay-with-credit .pay-actions .client-name a.fa {}
+.ticket-context .context-card.pay-with-cash .pay-actions .client-name a.fa-check,
+.ticket-context .context-card.pay-with-credit .pay-actions .client-name a.fa-check {
+    color: #00b200;
+}
+.ticket-context .context-card.pay-with-cash .pay-actions .client-name a.fa-remove,
+.ticket-context .context-card.pay-with-credit .pay-actions .client-name a.fa-remove {
+    color: #b20000;
+}
+.ticket-context .context-card.pay-with-cash .pay-actions .client-add-form .user-document-input,
+.ticket-context .context-card.pay-with-credit .pay-actions .client-add-form .user-document-input {
+    background: #00a200;
+    border: medium none;
+    display: block;
+    float: left;
+    height: 60px;
+    width: 74%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 22px;
+}
+.ticket-context .context-card.pay-with-cash .pay-actions .client-add-form a,
+.ticket-context .context-card.pay-with-credit .pay-actions .client-add-form a {
+    width: 25%;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+}
+.ticket-context .context-card.pay-with-cash .pay-actions .client-add-form a.fa,
+.ticket-context .context-card.pay-with-credit .pay-actions .client-add-form a.fa {}
+.ticket-context .context-card.pay-with-cash .pay-actions .client-add-form a.in-card-action,
+.ticket-context .context-card.pay-with-credit .pay-actions .client-add-form a.in-card-action {}
+
+.ticket-context .context-card.end-ticket {}
+.ticket-context .context-card.end-ticket .context-content {}
+.ticket-context .context-card.end-ticket .context-content .summary {
+    padding: 50px;
+}
+.ticket-context .context-card.end-ticket .context-content .summary > div {
+    color: #fff;
+    font-size: 26px;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+    min-width: 340px;
+    width: 50%;
+}
+.ticket-context .context-card.end-ticket .context-content .summary > div .value {
+    display: inline-block;
+    float: right;
+    width: 50%;
+    text-align: right;
+    font-size: 28px;
+}
+/* Bar code */
+.product-barcode-input,
+.product-barcode-fix {
+    position: absolute;
+    left: -1000px;
+}
+.product-barcode {
+    background: #fff none repeat scroll 0 0;
+    bottom: 0;
+    font-size: 60px;
+    /*height: 100px;*/
+    height: 0;
+    left: 0;
+    line-height: 100px;
+    opacity: 0.75;
+    overflow: hidden;
+    padding: 0 20px;
+    position: absolute;
+    right: 0;
+    transition: all .25s ease;
+}
+.product-barcode.up {
+    bottom: 100px;
+    transition: all .25s ease;
+}
+.product-barcode.active {
+    height: 100px;
+    transition: all .25s ease;
+}

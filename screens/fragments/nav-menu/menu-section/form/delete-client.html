@@ -1,0 +1,13 @@
+<h1 class="title">
+	<span class="section-icon fa fa-file-text"></span>
+	Eliminar Cliente
+</h1>
+
+<div class="form" id="product-form">
+	<p>¿Seguro que desea eliminar el cliente {{client_first_name}} {{client_last_name}}?</p>
+</div>
+<div class="form-buttons">
+	<a href="#" class="btn btn-save" data-action="deleteClient" data-params='{"id": "{{client_id}}"}'>Eliminar</a>
+	<a href="#" class="btn btn-reset" data-action="resetForm">Cancelar</a>
+	<a href="#" class="btn btn-close" data-action="openMenuSection" data-params='{"section": "list", "template": "clients", "model": "clients", "page": "1", "dataFn": "getClientsData"}'>Salir</a>
+</div>

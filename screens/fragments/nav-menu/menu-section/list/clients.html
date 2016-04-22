@@ -1,0 +1,49 @@
+<h1 class="title">
+	<span class="section-icon fa fa-users"></span>
+	Clientes
+	<a href="#" class="section-action fa fa-plus" data-action="openMenuSection" data-params='{"section": "form", "template": "add-client"}'></a>
+</h1>
+
+{{if: pagesLength > 1}}
+<div class="pager">
+	<!-- <a href="#" class="pager-prev fa fa-angle-left" data-ation="openMenuSection" data-params='[[rbr]]"section":"list", "model": "products", "page": "prev", "alias": "Artículos", "icon": "file-text"[[lbr]]'></a> -->
+	<div class="pages">
+		{{repeat: pages}}
+		<a href="#" class="page page-##index##" data-action="openMenuSection" data-params='[[rbr]]"section": "list", "template": "clients", "model": "products", "page": "##index##", "dataFn": "getClientsData"[[lbr]]'>
+			##index##
+		</a>
+		{{endrepeat}}
+	</div>
+	<!-- <a href="#" class="pager-next fa fa-angle-right" data-ation="openMenuSection" data-params='[[rbr]]"section":"list", "model": "products", "page": "next", "alias": "Artículos", "icon": "file-text"[[lbr]]'></a> -->
+</div>
+{{endif}}
+
+{{if: listLength <= 0}}
+<div class="message">{{message}}</div>
+{{endif}}
+
+{{if: listLength > 0}}
+<div class="table">
+	<div class="table-header">
+		<span class="header code">CI</span>
+		<span class="header description">Nombre</span>
+		<span class="header price">Teléfono</span>
+		<span class="header stock">RUT</span>
+		<span class="header item-action"></span>
+	</div>
+	<div class="table-body">
+		{{repeat: list}}
+		<div class="table-row">
+			<span class="cell code">##document##</span>
+			<span class="cell description">##first_name## ##last_name##</span>
+			<span class="cell price">##phone##</span>
+			<span class="cell stock">##company_rut##</span>
+			<span class="cell item-action">
+				<a href="#" class="edit fa fa-edit" data-action="openMenuSection" data-params='[[rbr]]"section": "form", "template": "edit-client", "model": "client", "edit-id": "##id##"[[lbr]]'></a>
+				<a href="#" class="remove fa fa-remove" data-action="openMenuSection" data-params='[[rbr]]"section": "form", "template": "delete-client", "model": "client", "delete-id" : "##id##"[[lbr]]'></a>
+			</span>
+		</div>
+		{{endrepeat}}
+	</div>
+</div>
+{{endif}}
